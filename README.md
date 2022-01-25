@@ -5,4 +5,6 @@ https://levelup.gitconnected.com/multithreading-with-nodejs-is-reality-10871986b
 
 https://www.npmjs.com/package/paralleljs
 
+https://github.com/mcollina/fastparallel
+
 
