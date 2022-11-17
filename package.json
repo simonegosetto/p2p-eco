@@ -1,0 +1,31 @@
+{
+  "name": "ansia",
+  "version": "0.0.1",
+  "description": "P2P network created to keep various archives synchronized, which can be integrated with a custom function to interact with external services, databases or much more.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonegosetto/ansia.git"
+  },
+  "keywords": [
+    "p2p",
+    "network",
+    "sync"
+  ],
+  "author": "Simone Gosetto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simonegosetto/ansia/issues"
+  },
+  "homepage": "https://github.com/simonegosetto/ansia#readme",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "dat-swarm-defaults": "^1.0.3",
+    "discovery-swarm": "^6.1.0",
+    "get-port": "^6.1.2"
+  }
+}
