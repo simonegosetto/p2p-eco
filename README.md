@@ -1,7 +1,6 @@
 <p align="center">
-  <a href="" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+  <a href="" target="blank"><img src="https://cdn2.iconfinder.com/data/icons/cryptocurrency-mining-line/80/Cryptocurrency_mining_bitcoin-07-512.png" width="200" alt="Logo" /></a>
 </p>
-# ANSIA
 
 <p align="center">P2P network for synchronize any type of resources.</p>
 <p align="center">
@@ -11,9 +10,33 @@
     <a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
 </p>
 
+## Installation
+
+```bash
+$ npm install
+```
+
+## Run
+
+```bash
+# development
+$ npm run start
+```
+
+## Build
+
+```bash
+$ npm run build
+```
 
 https://www.npmjs.com/package/paralleljs
 
 https://github.com/mcollina/fastparallel
 
+## Stay in touch
 
+- Author - [Simone Gosetto](https://github.com/simonegosetto)
+
+## License
+
+Nest is [MIT licensed](LICENSE).
