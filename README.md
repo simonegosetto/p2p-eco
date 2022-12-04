@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="" target="blank"><img src="https://raw.githubusercontent.com/simonegosetto/ansia/master/logo.png?raw=true" width="150" alt="Logo" /></a>
+  <a href="" target="blank"><img src="https://github.com/simonegosetto/ansia/blob/master/logo.png?raw=true" width="150" alt="Logo" /></a>
 </p>
 
 <p align="center">P2P network for synchronize any type of resources.</p>
