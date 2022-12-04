@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="" target="blank"><img src="https://cdn2.iconfinder.com/data/icons/cryptocurrency-mining-line/80/Cryptocurrency_mining_bitcoin-07-512.png" width="200" alt="Logo" /></a>
+  <a href="" target="blank"><img src="https://raw.githubusercontent.com/simonegosetto/ansia/master/logo.png" width="150" alt="Logo" /></a>
 </p>
 
 <p align="center">P2P network for synchronize any type of resources.</p>
