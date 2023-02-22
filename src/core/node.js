@@ -8,7 +8,7 @@ import os from 'os';
 const {machineIdSync} = pkg;
 import Peer from './peer.js'
 import msgpack from 'msgpack-lite';
-import ArchiveManager from "./archive/archive-manager.js";
+import ResourceManager from "./resource/resource-manager.js";
 
 export default class Node {
     #channel = '';
@@ -16,7 +16,7 @@ export default class Node {
     #port;
     #peers = {};
     swarm;
-    archiveManager = new ArchiveManager(this.#peers);
+    resourceManager = new ResourceManager(this.#peers);
 
     /**
      *

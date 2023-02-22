@@ -1,7 +1,7 @@
-import Archive from './archive.js';
+import Resource from './resource.js';
 
-export default class ArchiveManager {
-    #archives = [];
+export default class ResourceManager {
+    #resources = [];
     #peers = {}
 
     constructor(peers) {
@@ -10,34 +10,34 @@ export default class ArchiveManager {
 
     /**
      *
-     * @param archive
+     * @param resource
      */
-    addArchive(archive) {
-        if (!(archive instanceof Archive)) {
-            console.error(`invalid archive`);
+    addResource(resource) {
+        if (!(resource instanceof Resource)) {
+            console.error(`invalid resource`);
             return;
         }
 
-        if (this.#archives.map(n => n.name).includes(archive.name)) {
-            console.error(`archive ${archive?.name} already exists`);
+        if (this.#resources.map(n => n.name).includes(resource.name)) {
+            console.error(`resource ${resource?.name} already exists`);
             return;
         }
 
-        this.#archives.push(archive);
+        this.#resources.push(resource);
     }
 
     /**
      *
      */
-    #logArchives() {
-        console.table(this.#archives);
+    #logResources() {
+        console.table(this.#resources);
     }
 
     /**
      *
      */
     check() {
-        if (this.#archives.length > 0) {
+        if (this.#resources.length > 0) {
             // TODO capire come implementare l'algoritmo di sincronizzazione
             /*for (const archive of this.#archives) {
                 Object.keys(this.#peers).forEach(peer => {
@@ -45,7 +45,7 @@ export default class ArchiveManager {
                 })
             }*/
         } else {
-            console.info('no archives presents')
+            console.info('no resources presents')
         }
     }
 

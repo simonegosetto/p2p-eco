@@ -1,7 +1,7 @@
 import crypto from 'crypto';
 
 // "abstract" class
-export default class Archive {
+export default class Resource {
     name;
     rows;
     hash;
