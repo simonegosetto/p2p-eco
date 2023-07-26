@@ -1,6 +1,6 @@
-<p align="center">
+<!--<p align="center">
   <a href="" target="blank"><img src="https://github.com/simonegosetto/ansia/blob/master/logo.png?raw=true" width="150" alt="Logo" /></a>
-</p>
+</p>-->
 
 <p align="center">P2P network for synchronize any type of resources.</p>
 <p align="center">
