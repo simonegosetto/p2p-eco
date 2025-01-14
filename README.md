@@ -26,10 +26,6 @@ $ npm run start
 $ npm run build
 ```
 
-https://www.npmjs.com/package/paralleljs
-
-https://github.com/mcollina/fastparallel
-
 ## Stay in touch
 
 - Author - [Simone Gosetto](https://github.com/simonegosetto)
