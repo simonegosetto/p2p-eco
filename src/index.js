@@ -1,20 +1,53 @@
-import Resource from "./core/resource/resource.js";
+import config from './config.js';
+import logger from './core/logger.js';
+import Node from './core/node.js';
+import Resource from './core/resource/resource.js';
 
-console.clear();
+const log = logger.child('main');
 
-import Node from './core/node.js'
+let checkTimer;
+let shuttingDown = false;
 
-const node = new Node('SyncChannel');
+const node = new Node(config.channel, config.port, config.nodeID);
 
-(async () => {
+const shutdown = async signal => {
+    if (shuttingDown) return;
+    shuttingDown = true;
+    log.info(`${signal} received, shutting down`);
+    clearInterval(checkTimer);
 
-    node.resourceManager.addResource(new Resource('users', new Date().getTime().toString().split('')))
-    // node.archiveManager.addArchive(new Archive('roles', [1, 2, 3, 4]))
+    try {
+        await node.destroy();
+    } catch (error) {
+        log.error(`shutdown failed: ${error.message}`);
+        process.exitCode = 1;
+    }
+};
 
-    setInterval(() => {
-        node.resourceManager.check();
-    }, 5000);
+for (const signal of ['SIGINT', 'SIGTERM']) {
+    process.on(signal, () => void shutdown(signal));
+}
 
-})();
+// A broken process must die so the supervisor (PM2) can restart it: logging and
+// carrying on leaves an inconsistent node connected to the swarm.
+process.on('uncaughtException', error => {
+    log.error('uncaught exception', error);
+    process.exit(1);
+});
 
-process.on('uncaughtException', err => console.log('ERROR ::', err));
+process.on('unhandledRejection', reason => {
+    log.error('unhandled rejection', reason);
+    process.exit(1);
+});
+
+try {
+    await node.ready();
+} catch (error) {
+    log.error(`node failed to start: ${error.message}`);
+    process.exit(1);
+}
+
+// demo resource: replace with a Resource subclass wired to a real backend
+node.resourceManager.addResource(new Resource('users', Date.now().toString().split('')));
+
+checkTimer = setInterval(() => node.resourceManager.check(), config.checkIntervalMs);
